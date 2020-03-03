@@ -1,13 +1,233 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+    --main-color: #ffffff;
+    --secondary-color: white;
+    --main-text-color: #3e5869;
+    --secondary-text-color: #b0c7d6;
+    --send-message-form: #F5F5F5;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: system-ui;
+    font-weight: 200;
+    color: 	#3e5869; 
+}
+
+#root {
+    height: 100%;
+}
+
+.app {
+    display: grid;
+    height: 100%;
+    background-color: whitesmoke;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 60px;
+    grid-template-areas: 
+    "a a a a a a a a"
+    "n r r m m m m m"
+    "n r r m m m m m"
+    "n r r m m m m m"
+    "n r r m m m m m"
+    "n r r f f f f f";
+}
+.navbar{
+  grid-area: a;
+}
+.flex-container1 {
+    grid-area: n;
+}
+
+.rooms-list {
+    grid-area: r;
+}
+
+.message-list {
+    grid-area: m;
+}
+
+.send-message-form {
+    grid-area: f;
+}
+
+/* REST OF CSS */
+.rooms-list {
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: var(--main-color);
+    border: 2px solid#eee;
+    height: 100%;
+    
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    position: relative;
+}
+.rooms-list >ul{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: -17px; /* Increase/Decrease this value for cross-browser compatibility */
+    overflow-y: scroll;
+
+}
+
+.rooms-list > ul {
+    list-style-type: none;    
+    padding: 0;
+    overflow: scoll;
+}
+
+.rooms-list li {
+    margin: 10px 0;
+}
+
+.rooms-list > h3 {
+    margin: 5px 0;
+    color: var(--secondary-color);
+}
+
+.rooms-list .room a {
+    color: var(--secondary-text-color);
+    font-weight: 600;
+    text-decoration: none;
+    
+ }
+
+.rooms-list .room.active a {
+    color: var(--secondary-color);
+}
+
+.new-room-form {
+    padding: 0 5px;
+    background: var(--secondary-color);
+    color: var(--main-text-color);
+}
+
+.new-room-form form {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.new-room-form input {
+    width: 135px;
+    background: var(--secondary-color);
+}
+
+.new-room-form button {
+    background: var(--secondary-color);
+    color: var(--main-text-color);
+    border: 0;
+} 
+
+.new-room-form input::placeholder {
+    color: var(--main-text-color);
+    font-weight: 200;
+}
+
+.new-room-form input:focus {
+    outline-width: 0;
+}
+
+.new-room-form input {
+    border: 0;
+}
+
+.new-room-form button {
+    border: 0;
+}
+
+.message {
+    margin: 15px 0;
+}
+
+.message .message-username {
+    font-size: 11px;
+    color: var(--main-text-color);
+    opacity: 0.9;
+    margin-bottom: 6px;
+}
+.message .message-text {
+    background: var(--main-color);
+    color: var(--secondary-color);
+    display: inline;
+    padding: 4px 8px;
+    border-radius: 8px;
+}
+
+.message-list {
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    position: relative;
+
+    box-sizing: border-box;
+    padding-left: 6px;
+    width: 100%;
+    height: 100%;
+    
+    background: var(--secondary-color);
+}
+.message-list > div{
+    position: absolute;
+    top: 0;
+    border: 2px solid #eee;
+    bottom: 0;
+    left: 0;
+    right: -17px; /* Increase/Decrease this value for cross-browser compatibility */
+    overflow-y: scroll;
+}
+.message-list > .list >ul{
+    text-align: center;
+}
+
+.message-list .join-room {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 34px;
+    font-weight: 300;
+}
+
+.send-message-form {
+    display: flex;
+    background: var(--send-message-form);
+    height: 96%;
+    border: 2px solid#eee;
+}
+
+.send-message-form input {
+    width: 85%;
+    padding: 15px 10px;
+    margin: 0;
+    border-style: none;
+    font-weight: 200;
+
+}
+
+.send-message-form input:focus {
+    outline-width: 0;
+}
+
+.send-message-form input::placeholder {
+    color: var(--main-text-color);
+}
+
+.help-text {
+    position: absolute;
+    top: 10px;
+}
+::-webkit-scrollbar {
+    width: 0.2em;
+    height: 0.5em
+}
+
+::-webkit-scrollbar-thumb {
+    background: #eee
 }

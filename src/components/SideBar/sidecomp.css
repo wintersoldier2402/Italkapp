@@ -1,0 +1,36 @@
+.flex-container1{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    background-color:whitesmoke;
+}
+.flex-container1 > div {
+    background-color: white;
+    width: 175px;
+    margin: 10px 55px 13px 40px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 15px;
+    border-radius: 4px;
+  }
+  .flex-container1 > span {
+    font-weight: 700;
+    width: 175px;
+    margin:0 0 0 40px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 15px;
+  }
+  .underline-on-hover1{
+    font-weight: 700;
+  }
+  .underline-on-hover1:hover {
+    /* text-decoration: underline;
+     text-decoration-color: salmon;*/
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(252,150,120,1) 0%, rgba(247,108,127,1) 100.4% );
+     } 
+       .underline-on-hover2:hover {
+    /* text-decoration: underline;
+     text-decoration-color: salmon;*/
+     color: salmon;
+     } 
