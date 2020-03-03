@@ -11,13 +11,10 @@ class App extends React.Component {
             <div className="app">
                 <Navbar />
                 <Sidebar />
-                
                 <RoomList />
                 <MessageList />
-                
                 <SendMessageForm />
-                
-            </div>
+                </div>
         );
     }
 }

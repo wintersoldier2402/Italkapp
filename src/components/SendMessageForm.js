@@ -12,7 +12,9 @@ class SendMessageForm extends React.Component {
             <input
                     placeholder="SendMessageForm"
                     type="text" />
-                    <div className="btn"><img src={Logo} /> Send</div>
+                   <div className="btn"><img style={{position:"relative" ,right: "35px",top: "30px"}}src={Logo} />
+                   <a className='link'>Send</a>
+                   </div>
                     
                    
             </div>
